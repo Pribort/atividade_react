@@ -18,7 +18,7 @@ function Tarefa() {
       <h3>{tarefa}</h3>
       <p>Conclua a tarefa</p>
       <button onClick={() => setCompleted((v) => !v)}>
-        {completed ? "Concluir tarefaRevisar tarefa" : "Concluir tarefa"}
+        {completed ? "Revisar tarefa" : "Concluir tarefa"}
       </button>
     </>
   );
