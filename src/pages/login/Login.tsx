@@ -1,7 +1,21 @@
+import { useState } from "react";
+import Home from "../home/Home";
+
 function Login() {
+  const [isLogged, setIsLogged] = useState(false);
+
   return (
-    <div>Login</div>
-  )
+    <>
+      {isLogged ? (
+        <Home titulo="Bem vindo!" texto="Voce acessou o login!" />
+      ) : (
+        <div>
+          <h2>Componente Login</h2>
+          <button onClick={() => setIsLogged(true)}>Entrar</button>
+        </div>
+      )}
+    </>
+  );
 }
 
-export default Login
+export default Login;

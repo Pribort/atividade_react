@@ -1,8 +1,27 @@
-﻿
+﻿import { useEffect, useState } from "react";
+
 function Tarefa() {
+  const [completed, setCompleted] = useState(false);
+  const [tarefa, setTarefa] = useState("");
+
+  useEffect(() => {
+    if (completed) {
+      setTarefa("Parabéns! Você concluiu a tarefa!");
+    } else {
+      setTarefa("Que pena! Você não concluiu a tarefa!");
+    }
+  }, [completed]);
+
   return (
-    <div>Componente Tarefa</div>
-  )
+    <>
+      <h2>Componente Tarefa</h2>
+      <h3>{tarefa}</h3>
+      <p>Conclua a tarefa</p>
+      <button onClick={() => setCompleted((v) => !v)}>
+        {completed ? "Concluir tarefaRevisar tarefa" : "Concluir tarefa"}
+      </button>
+    </>
+  );
 }
 
-export default Tarefa
+export default Tarefa;
